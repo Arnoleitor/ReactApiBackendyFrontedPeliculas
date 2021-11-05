@@ -1,0 +1,20 @@
+
+.designLogin{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    height: 100vh;
+}
+
+.sendButton{
+    height: 2em;
+    width: 6em;
+
+    background-color: green;
+    color: white;
+
+    border-radius: 0.2em;
+}

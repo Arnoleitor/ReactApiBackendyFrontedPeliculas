@@ -1,0 +1,29 @@
+
+.designRegister {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+
+}
+
+.botonSend {
+    cursor: pointer;
+    border-radius: 0.2em;
+
+    height: 2em;
+    width: 6em;
+
+    background-color: red;
+    transition: 0.4s;
+
+}
+
+.botonSend:hover {
+    transition: 0.4s;
+    background-color: darkred;
+}
+
