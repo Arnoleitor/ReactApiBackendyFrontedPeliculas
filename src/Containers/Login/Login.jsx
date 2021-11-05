@@ -33,7 +33,7 @@ const Login = () => {
             localStorage.setItem("datosLogin", JSON.stringify(res.data.user));
 
             setTimeout(() => {
-                history("/Home");
+                history("/Profile");
             }, 4000);
         } catch (error) {
             setmsgError("Usuario o Password incorrecto");
