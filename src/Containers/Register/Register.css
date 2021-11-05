@@ -3,8 +3,11 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 58.5em;
+    margin:0;
+    background-color: blanchedalmond;
 
     
 
@@ -19,6 +22,7 @@
 
     background-color: red;
     transition: 0.4s;
+    margin-top: 10px;
 
 }
 

@@ -2,11 +2,11 @@
 .designLogin{
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
     background-color: aquamarine;
     height: 100vh;
+    cursor: pointer;
 }
 
 .sendButton{
@@ -17,4 +17,6 @@
     color: white;
 
     border-radius: 0.2em;
+    cursor: pointer;
+    margin-top: 10px;
 }

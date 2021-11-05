@@ -1,10 +1,10 @@
-
+import './Home.css';
 import React from 'react';
 
 const Home = () => {
 
     return (
-        <div>HOME...CASITA</div>
+        <div class='designHome'>PAGINA EN CONSTRUCCIÓN</div>
     )
 };
 
