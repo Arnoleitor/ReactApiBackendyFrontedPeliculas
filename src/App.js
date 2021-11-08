@@ -7,13 +7,14 @@ import Home from './Containers/Home/Home';
 import Login from './Containers/Login/Login.jsx';
 import Profile from './Containers/Profile/Profile.jsx';
 import Peliculas from './Containers/peliculas/Peliculas.jsx';
+import Header from './Components/Header/Header.jsx';
 
 function App() {
   return (
     <div className="App">
 
       <BrowserRouter>
-      
+      <Header/>
         <Routes>
 
           <Route path="/Home" element={<Home/>}/>

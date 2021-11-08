@@ -39,14 +39,16 @@ const Peliculas = () => {
     if(peliculas[1]?.titulo){
         console.log("Recibiendo Peliculas",peliculas)
     return (
+        <div className="Estrenos"><h1 className="tituloPeliculas">Los mejores estrenos 2021</h1>
         <div className="mostrarpeliculas">
+            
             {
                 peliculas.map((pelicula) => {
-                    return <div key = {pelicula._id}className="Peliculas">{pelicula.titulo}</div>
+                    return <div key = {pelicula._id}className="Peliculas"><p className="parrafo">{pelicula.titulo}</p></div>
                 })
             }
 
-        </div>
+        </div></div>
     )
         }else {
 
@@ -54,6 +56,7 @@ const Peliculas = () => {
                          <div>
                                 <img className="loader" src={loading}/>
                         </div>
+
         )
     }
 };

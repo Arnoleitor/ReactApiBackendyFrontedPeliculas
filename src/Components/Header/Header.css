@@ -1,0 +1,16 @@
+.designHeader {
+    display: flex;
+    justify-content: space-between;
+    background-color: #121212;
+    height: 7em;
+    align-items: center;
+    flex-direction: row;
+    padding: 0px 40px;
+}
+#menu{
+    display: flex;
+}
+#logo{
+height: 5.5em;
+cursor: pointer;
+}
