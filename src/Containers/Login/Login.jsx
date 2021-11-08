@@ -46,7 +46,7 @@ const Login = () => {
     return (
 
         <div className="designLogin">
-            <h1>Inicio de Sesión</h1>
+            <h1 className="iniciosesion">Inicio de Sesión</h1>
             {/*<pre>{JSON.stringify(credentials, null,2)}</pre>*/}
             <input placeholder="ejemplo@email.com"type='email' name='email' title='email' onChange={manejadorInputs} lenght='30' />
             <input placeholder="introduce contraseña"type='password' name='password' title='password' onChange={manejadorInputs} lenght='30' />

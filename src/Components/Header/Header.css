@@ -6,6 +6,7 @@
     align-items: center;
     flex-direction: row;
     padding: 0px 40px;
+    cursor: pointer;
 }
 #menu{
     display: flex;

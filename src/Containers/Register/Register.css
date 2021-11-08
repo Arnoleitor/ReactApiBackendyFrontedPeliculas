@@ -8,8 +8,7 @@
     background-color: #941717;
     height: 100vh;
     cursor: pointer;
-
-    
+    text-shadow: black 0.1em 0.1em 1.7em;
 
 }
 
@@ -27,6 +26,8 @@
 
 .botonSend:hover {
     transition: 0.4s;
+    transform: scale(1.1);
     background-color: rgba(133, 131, 131, 0.438);
 }
+
 

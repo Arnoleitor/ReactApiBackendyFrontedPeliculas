@@ -1,9 +1,28 @@
 .designProfile{
-    background-color: aquamarine;
+    background-color: #941717;
     height: 100vh;
     display: flex;
     align-content: center;
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
+    color: white;
+}
+
+.recuadroperfil{
+        height: 12em;
+        width: 20em;
+        background-color: black;
+        color: white;
+        border-radius: 1.2em;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.recuadroperfil:hover{
+    transition: 1s;
+    transform: scale(1.5);
+    background-color: rgb(0, 0, 0);
 }

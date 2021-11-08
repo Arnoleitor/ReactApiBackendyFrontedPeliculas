@@ -23,4 +23,9 @@
 .sendButton:hover {
     transition: 0.4s;
     background-color: rgba(133, 131, 131, 0.438);
+    transform: scale(1.1);
+}
+
+.iniciosesion{
+    text-shadow: black 0.1em 0.1em 0.5em;
 }

@@ -1,7 +1,9 @@
 .designHome{
-    background-color: aquamarine;
+    background-image: linear-gradient( rgb(0 0 0 / 49%), rgb(0 0 0 / 94%) ), url(../../assets/img/fondoHome.jpg);
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    background-size: cover;
+    cursor: pointer;
 }
