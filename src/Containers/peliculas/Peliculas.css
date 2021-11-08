@@ -1,0 +1,11 @@
+.mostratpeliculas{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.loader {
+    margin-top: 25%;
+    justify-content: center;
+    height: 10em;
+}

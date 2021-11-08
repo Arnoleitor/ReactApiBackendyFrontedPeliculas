@@ -5,7 +5,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Register from './Containers/Register/Register';
 import Home from './Containers/Home/Home';
 import Login from './Containers/Login/Login.jsx';
-import Profile from './Containers/Profile/Profile.jsx'
+import Profile from './Containers/Profile/Profile.jsx';
+import Peliculas from './Containers/peliculas/Peliculas.jsx';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/profile" element={<Profile/>}/>
+          <Route path="/peliculas" element={<Peliculas/>}/>
 
         </Routes>
       
