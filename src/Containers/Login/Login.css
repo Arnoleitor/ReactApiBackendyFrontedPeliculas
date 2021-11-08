@@ -4,19 +4,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
+    background-color: #941717;
     height: 100vh;
     cursor: pointer;
 }
 
 .sendButton{
     height: 2em;
-    width: 6em;
-
-    background-color: green;
+    width: 7em;
+    background-color: black;
     color: white;
-
-    border-radius: 0.2em;
+    border-radius: 1.2em;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 20px;
+    transition: 0.4s;
+}
+
+.sendButton:hover {
+    transition: 0.4s;
+    background-color: rgba(133, 131, 131, 0.438);
 }

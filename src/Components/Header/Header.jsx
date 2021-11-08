@@ -21,7 +21,7 @@ const Header = () => {
                 <Boton destino="Perfil" url="/profile"/>
                 <Boton destino="Registro" url="/register"/>
                 <Boton destino="Login" url="/login"/>
-                <Boton destino="peliculas" url="/Peliculas"/>
+                <Boton destino="Peliculas" url="/Peliculas"/>
                 
             </div>
         </div>

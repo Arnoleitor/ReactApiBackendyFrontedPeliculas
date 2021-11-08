@@ -1,6 +1,5 @@
 
 import './App.css';
-
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Register from './Containers/Register/Register';
 import Home from './Containers/Home/Home';

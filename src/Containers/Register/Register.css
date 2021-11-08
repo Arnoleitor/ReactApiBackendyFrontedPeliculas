@@ -3,31 +3,30 @@
 
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 58.5em;
-    margin:0;
-    background-color: blanchedalmond;
+    align-items: center;
+    background-color: #941717;
+    height: 100vh;
+    cursor: pointer;
 
     
 
 }
 
 .botonSend {
-    cursor: pointer;
-    border-radius: 0.2em;
-
     height: 2em;
-    width: 6em;
-
-    background-color: red;
+    width: 7em;
+    background-color: black;
+    color: white;
+    border-radius: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
     transition: 0.4s;
-    margin-top: 10px;
 
 }
 
 .botonSend:hover {
     transition: 0.4s;
-    background-color: darkred;
+    background-color: rgba(133, 131, 131, 0.438);
 }
 
