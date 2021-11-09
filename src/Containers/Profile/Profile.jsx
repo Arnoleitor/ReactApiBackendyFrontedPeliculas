@@ -15,7 +15,6 @@ const Profile = () => {
     return (
         <div className="designProfile">
             <div className="recuadroperfil">
-            <br></br>
             {datosPerfil.nombre}
             <br></br>
             {datosPerfil.email}
