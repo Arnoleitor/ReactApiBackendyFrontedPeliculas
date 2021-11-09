@@ -14,13 +14,14 @@ const Profile = () => {
 
     return (
         <div className="designProfile">
-            <div className="recuadroperfil">{datosPerfil.nombre}
+            <div className="recuadroperfil">
+            <br></br>
+            {datosPerfil.nombre}
             <br></br>
             {datosPerfil.email}
             <br></br>
             {datosPerfil.rol}
-            <br></br>
-            Humano
+           
         </div></div>
     )
 };
