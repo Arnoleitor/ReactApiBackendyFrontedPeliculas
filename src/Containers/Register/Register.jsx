@@ -11,16 +11,17 @@ const Register = () => {
     //Hooks
     const [msgError, setmsgError] = useState("");
     const [user, setUser] = useState({
-        // name: '',
+        nombre: '',
         // surname: '',
         // dni: '',
         email: '',
         // address: '',
         // city: '',
         // cp: 0,
-        password: '',
+        password: ''
         // password2: '',
         // phone: ''
+        // rol: '',
     });
 
     //Manejadores o Handlers
@@ -45,19 +46,26 @@ const Register = () => {
     const enviaDatosRegistro = async () => {
         //Comprobación de errores en los datos
 
-        if (! /[a-z]/gi.test(user.email) ) {
+        if (! /[a-z]/gi.test(user.nombre) ) {
            setmsgError("Nombre Incorrecto");
            return;
         };
         
-        if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(user.email) ) {
+        if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(user.email)) {
            setmsgError("Email Incorrecto");
            return;
         };
 
+        if (!user.password.length >=8) {
+            setmsgError("La contraseña tiene que tener al menos 8 caracteres");
+            return;
+        };
+        
+        console.log(user.password.length)
+
         //Generación del body
         let body = {
-            // name: user.name,
+            nombre: user.nombre,
             // surname: user.surname,
             // dni: user.dni,
             email: user.email,
@@ -67,6 +75,7 @@ const Register = () => {
             password: user.password,
             // password2: user.password2,
             // phone: user.phone
+            // rol: user.rol
         }
 
         //Conexion a axios y envio de datos
@@ -75,19 +84,20 @@ const Register = () => {
         
         try {
 
-            let res = await axios.post("https://proyectopeliculas.herokuapp.com/usuario/signup", body);
-
+            let res = await axios.post("https://proyectopeliculasgeekshubs.herokuapp.com/usuario/signup", body);
+            setmsgError("Usuario registrado con éxito,te redirecciono a la pagina de Login");
             //Guardado de datos en localStorage
             
 
         } catch (error) {
             console.log(error)
+            setmsgError("No se ha podido registrar el usuario");
+            return;
         }
-
-
+        
         
 
-        setmsgError("Usuario registrado con éxito,te redirecciono a la pagina de Login");
+        
         
         setTimeout(()=>{
             history("/Login");
@@ -100,7 +110,7 @@ const Register = () => {
         <div className="designRegister">
             <h1 classname="registro">Registro</h1>
             {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
-            {/* <input type='text' name='name' title='name' onChange={userHandler} lenght='30' placeholder='Nombre' /> */}
+            <input type='text' name='nombre' title='nombre' onChange={userHandler} lenght='30' placeholder='Nombre' />
             {/* <input type='text' name='surname' title='surname' onChange={userHandler} lenght='30' placeholder='Apellido' />
             <input type='text' name='dni' title='dni' onChange={userHandler} lenght='10' placeholder='DNI' /> */}
             <input type='email' name='email' title='email' onChange={userHandler} lenght='30' placeholder='Email' />
@@ -108,8 +118,8 @@ const Register = () => {
             <input type='text' name='city' title='city' onChange={userHandler} lenght='30' placeholder='Ciudad' />
             <input type='number' name='cp' title='cp' onChange={userHandler} lenght='5' placeholder='C.Postal' /> */}
             <input type='text' name='password' title='password' onChange={userHandler} lenght='30' placeholder='Password' />
-            {/* <input type='text' name='password2' title='password2' onChange={userHandler} lenght='30' placeholder='Repite Password' />
-            <input type='text' name='phone' title='phone' onChange={userHandler} lenght='20' placeholder='Teléfono' /> */}
+            {/* <input type='text' name='password2' title='password2' onChange={userHandler} lenght='30' placeholder='Repite Password' /> */}
+            {/* <input type='text' name='rol' title='rol' onChange={userHandler} lenght='20' placeholder='rol' /> */}
             <div className="botonSend" onClick={() => enviaDatosRegistro()}>Registrame</div>
             <div>{msgError}</div>
         </div>

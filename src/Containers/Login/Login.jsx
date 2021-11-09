@@ -27,7 +27,7 @@ const Login = () => {
 
         try {
 
-            let res = await axios.post("https://proyectopeliculas.herokuapp.com/usuario/signin", body);
+            let res = await axios.post("https://proyectopeliculasgeekshubs.herokuapp.com/usuario/signin", body);
             setmsgError(`inicio de sesión correcto ${res.data.user.email}....`);
             console.log("respuesta",res)
             localStorage.setItem("datosLogin", JSON.stringify(res.data.user));

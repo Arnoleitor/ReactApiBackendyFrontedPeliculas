@@ -19,7 +19,7 @@ const Peliculas = () => {
     let config = {
         headers: { Authorization: `Bearer ${token}` }
     };
-        let res = await axios.get('https://proyectopeliculas.herokuapp.com/peliculas', config);
+        let res = await axios.get('https://proyectopeliculasgeekshubs.herokuapp.com/peliculas', config);
         setPeliculas(res.data)
         console.log(res)
     };
