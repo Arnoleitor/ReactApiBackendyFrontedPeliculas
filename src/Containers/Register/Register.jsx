@@ -56,7 +56,7 @@ const Register = () => {
            return;
         };
 
-        if (!user.password.length >=8) {
+        if (user.password.length <8) {
             setmsgError("La contraseña tiene que tener al menos 8 caracteres");
             return;
         };
@@ -101,7 +101,7 @@ const Register = () => {
         
         setTimeout(()=>{
             history("/Login");
-        },4000);
+        },2000);
     };
 
 
