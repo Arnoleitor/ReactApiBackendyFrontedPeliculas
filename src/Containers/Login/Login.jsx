@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { LOGIN } from '../../redux/types';
 import './Login.css';
 
 
-const Login = () => {
+const Login = (props) => {
 
     const history = useNavigate();
 
@@ -28,13 +30,18 @@ const Login = () => {
         try {
 
             let res = await axios.post("https://proyectopeliculasgeekshubs.herokuapp.com/usuario/signin", body);
-            setmsgError(`inicio de sesión correcto ${res.data.user.email}....`);
+            setmsgError(`inicio de sesión correcto ${res.data.user.nombre}....`);
             console.log("respuesta",res)
-            localStorage.setItem("datosLogin", JSON.stringify(res.data.user));
+            // localStorage.setItem("datosLogin", JSON.stringify(res.data.user));
+
+            let datos = res.data;
+            
+            props.dispatch({type:LOGIN,payload:datos});
+            console.log(datos)
 
             setTimeout(() => {
                 history("/Peliculas");
-            }, 4000);
+            }, 1500);
         } catch (error) {
             setmsgError("Usuario o Password incorrecto");
 
@@ -50,10 +57,10 @@ const Login = () => {
             {/*<pre>{JSON.stringify(credentials, null,2)}</pre>*/}
             <input placeholder="ejemplo@email.com"type='email' name='email' title='email' onChange={manejadorInputs} lenght='30' />
             <input placeholder="introduce contraseña"type='password' name='password' title='password' onChange={manejadorInputs} lenght='30' />
-            <div className="sendButton" onClick={() => logeame()}>Login</div>
+            <div className="sendButton" onClick={() => logeame()}>Iniciar sesión</div>
             <div className="error">{msgError}</div>
         </div>
     )
 };
 
-export default Login;
+export default connect()(Login);

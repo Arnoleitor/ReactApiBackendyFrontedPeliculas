@@ -27,3 +27,9 @@
     transform: scale(1.5);
     background-color: rgb(0, 0, 0);
 }
+
+.designProfile {
+    background-color: black;
+    height: 15em;
+    color: white;
+}
