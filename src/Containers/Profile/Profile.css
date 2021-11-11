@@ -33,3 +33,12 @@
     height: 15em;
     color: white;
 }
+
+#logout{
+    transition: 0.4s;
+    background-color: rgb(255 0 0);
+    transform: scale(1.1);
+    height: 2em;
+    width: 6em;
+    border-radius: 1em;
+}

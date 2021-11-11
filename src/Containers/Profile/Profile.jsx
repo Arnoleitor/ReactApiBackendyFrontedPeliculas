@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 import './Profile.css';
-import { LOGOUT } from '../../redux/types';
+import { LOGOUT, UPDATE_USER } from '../../redux/types';
 
 const Profile = (props) => {
 
@@ -23,7 +23,7 @@ const Profile = (props) => {
                 <div className="user">{props.credentials?.user?.email}</div>
                 {/* <div className="user">{props.credentials?.user?.telefono}</div>
                 <div className="user">{props.credentials?.user?.direccion}</div> */}
-                <div className="user" onClick={()=>logOut()}>LOGOUT</div>
+                <div id="logout" onClick={()=>logOut()}>LOGOUT</div>
             </div>
             
         

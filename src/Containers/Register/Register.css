@@ -7,7 +7,7 @@
     background-color: #941717;
     height: 100vh;
     cursor: pointer;
-    text-shadow: black 0.1em 0.1em 1.7em;
+
 
 }
 
@@ -32,5 +32,10 @@
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
 }
+
+.designBoton:hover {
+    color: red;
+}
+
 
 
