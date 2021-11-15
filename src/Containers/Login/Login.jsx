@@ -32,13 +32,14 @@ const Login = (props) => {
             let res = await axios.post("https://proyectopeliculasgeekshubs.herokuapp.com/usuario/signin", body);
             setmsgError(`inicio de sesión correcto ${res.data.user.nombre}....`);
             console.log("respuesta",res)
+            
             // localStorage.setItem("datosLogin", JSON.stringify(res.data.user));
 
             let datos = res.data;
             
             props.dispatch({type:LOGIN,payload:datos});
             console.log(datos)
-
+            
             setTimeout(() => {
                 history("/Peliculas");
             }, 1500);
@@ -51,11 +52,12 @@ const Login = (props) => {
 
 
     return (
+        
         <div className="designLogin">
             <h1 className="iniciosesion">Inicio de Sesión</h1>
             {/*<pre>{JSON.stringify(credentials, null,2)}</pre>*/}
-            <input placeholder="ejemplo@email.com"type='email' name='email' title='email' onChange={manejadorInputs} lenght='30' />
-            <input placeholder="introduce contraseña"type='password' name='password' title='password' onChange={manejadorInputs} lenght='30' />
+            <input id="relleno1" placeholder="Ejemplo@email.com"type='email' name='email' title='email' onChange={manejadorInputs} lenght='30' />
+            <input id="relleno2" placeholder="Introduce contraseña"type='password' name='password' title='password' onChange={manejadorInputs} lenght='30' />
             <div className="sendButton" onClick={() => logeame()}>Iniciar sesión</div>
             <div className="error">{msgError}</div>
         </div>

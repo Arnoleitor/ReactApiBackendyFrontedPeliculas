@@ -51,14 +51,16 @@ const Profile = (props) => {
 
     useEffect(() => {
         setUserData(props.credentials.user);
+        
 
     }, [props.credentials]);
 
-    // useEffect(()=>{
-    //     // console.log(datosPerfil)
-    // },[])
+   
+
     if (props.credentials?.token !== '') {
         return (
+            
+            
             <div className="designProfile">
                 <div className="cuadrado1">
                     <div className="user"><input id="nombre" placeholder="Introduce nuevo nombre" value={userData?.nombre || ""} name="nombre" onChange={manejaInputs} /></div>
@@ -69,8 +71,8 @@ const Profile = (props) => {
 
                 </div>
                 <div className="recuadroperfilInfo">
-                    gnhty
-                    dddd
+                <div>{props.credentials.user.email}</div>
+                <div>{props.credentials.user.nombre}</div>
                 <div id="logout" onClick={() => logOut()}>LOGOUT</div>
                 </div>
                 {/* <pre>{JSON.stringify(userData, null, 2)}</pre> */}
