@@ -51,7 +51,6 @@ const Login = (props) => {
 
 
     return (
-
         <div className="designLogin">
             <h1 className="iniciosesion">Inicio de Sesión</h1>
             {/*<pre>{JSON.stringify(credentials, null,2)}</pre>*/}
@@ -60,6 +59,7 @@ const Login = (props) => {
             <div className="sendButton" onClick={() => logeame()}>Iniciar sesión</div>
             <div className="error">{msgError}</div>
         </div>
+        
     )
 };
 

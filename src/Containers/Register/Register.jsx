@@ -18,10 +18,10 @@ const Register = () => {
         // address: '',
         // city: '',
         // cp: 0,
-        password: ''
+        password: '',
         // password2: '',
         // phone: ''
-        // rol: '',
+        rol: 'usuario',
     });
 
     //Manejadores o Handlers
@@ -75,7 +75,7 @@ const Register = () => {
             password: user.password,
             // password2: user.password2,
             // phone: user.phone
-            // rol: user.rol
+            rol: user.rol
         }
 
         //Conexion a axios y envio de datos

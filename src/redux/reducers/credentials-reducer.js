@@ -1,22 +1,25 @@
-import {LOGIN, LOGOUT, UPDATE_USER} from '../types';
+import { LOGIN, LOGOUT, UPDATE_USER } from '../types';
 
 const initialState = {
-    user : {},
-    token : ''
-    
+    user: {},
+    token: ''
+
 };
 
 const credentialsReducer = (state = initialState, action) => {
-    switch(action.type){
-        //Ejemplo de añadido de datos
-        case LOGIN :
+    switch (action.type) {
+        //añadido de datos
+        case LOGIN:
             return action.payload;
 
-        //Ejemplo de reestablecimiento o borrado de datos
-        case LOGOUT : 
+        //reestablecimiento o borrado de datos
+        case LOGOUT:
             return initialState;
-            
-        default :
+
+
+        case UPDATE_USER:
+            return { ...state, user: action.payload }; //emn user metes en este caso el body
+        default:
             return state
     }
 }
