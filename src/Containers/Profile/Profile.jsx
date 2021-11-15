@@ -71,8 +71,11 @@ const Profile = (props) => {
 
                 </div>
                 <div className="recuadroperfilInfo">
-                <div>{props.credentials.user.email}</div>
-                <div>{props.credentials.user.nombre}</div>
+                <h5 className="datosperfil">Datos de perfil</h5>
+                <div>Nombre:      {props.credentials.user.nombre}</div>
+                <div>Email:       {props.credentials.user.email}</div>
+                <div>Rol:       {props.credentials.user.rol}</div>
+                
                 <div id="logout" onClick={() => logOut()}>LOGOUT</div>
                 </div>
                 {/* <pre>{JSON.stringify(userData, null, 2)}</pre> */}

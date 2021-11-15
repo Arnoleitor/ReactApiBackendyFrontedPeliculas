@@ -24,7 +24,7 @@ const Login = (props) => {
 
         let body = {
             email: credentials.email,
-            password: credentials.password
+            password: credentials.password,
         };
 
         try {

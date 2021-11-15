@@ -88,18 +88,24 @@
     transition: 0.4s;
     background-color: rgb(255 0 0);
     transform: scale(1.1);
-    height: 2em;
-    width: 6em;
-    border-radius: 1em;
+    height: 2.1em;
+    width: 7em;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .update{
     transition: 0.4s;
     background-color: rgb(255 0 0);
     transform: scale(1.1);
-    height: 2em;
-    width: 6em;
-    border-radius: 1em;
+    height: 2.1em;
+    width: 7em;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #tituloActualizar{
@@ -107,4 +113,11 @@
     color: white;
     margin-top: 2em;
     text-shadow: rgb(226, 0, 0) 0.1em 0.1em 0.2em;
+}
+
+.datosperfil{
+    font-size: 1.2em;
+    color: black;
+    font-family: unset;
+    text-decoration: underline 2px;
 }
