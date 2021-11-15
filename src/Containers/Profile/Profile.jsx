@@ -32,6 +32,7 @@ const Profile = (props) => {
             let res = await axios.put(`https://proyectopeliculasgeekshubs.herokuapp.com/usuario/${userData._id}`,userData, token);
             setmsgError(`Datos actualizados ${res.data.user.body}....`);
             
+            
             //redireccionar a otra O MOSTRAR MENSAJE DE ACTUALIZACIÓN
 
         } catch (error) {
@@ -60,9 +61,11 @@ const Profile = (props) => {
         return (
             <div className="designProfile">
                 <div className="cuadrado1">
-                    <div className="user"><input id="nombre" value value={userData?.nombre || ""} name="nombre" onChange={manejaInputs} /></div>
-                    <div className="user"><input id="email" value={userData?.email || ""} name="email" onChange={manejaInputs} /></div>
+                    <div className="user"><input id="nombre" placeholder="Introduce nuevo nombre" value={userData?.nombre || ""} name="nombre" onChange={manejaInputs} /></div>
+                    <div className="user"><input id="email" placeholder="Introduce nuevo email" value={userData?.email || ""} name="email" onChange={manejaInputs} /></div>
+                    {/* <div className="user"><input id="contraseña" placeholder="introduce nueva contraseña" value={userData?.password || ""} name="password" onChange={manejaInputs}/></div> */}
                     <div className="update" onClick={() => update()}>ACTUALIZAR</div>
+                    
 
                 </div>
                 <div className="recuadroperfilInfo">
@@ -72,8 +75,8 @@ const Profile = (props) => {
                 </div>
                 {/* <pre>{JSON.stringify(userData, null, 2)}</pre> */}
                 
-                {/* <div className="user">{props.credentials?.user?.apellidos}</div>
-                <div className="user">{props.credentials?.user?.ciudad}</div> */}
+               {/* <div className="user">{props.credentials?.user?.apellidos}</div> */}
+                
                 
                 {/* <div className="user">{props.credentials?.user?.telefono}</div>
                 <div className="user">{props.credentials?.user?.direccion}</div> */}
