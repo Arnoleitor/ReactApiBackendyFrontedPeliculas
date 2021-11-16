@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import './Header.css';
 import Boton from '../Boton/Boton';
 import logo from '../../assets/img/netflix.png';
+import { connect } from 'react-redux';
 
 
-const Header = () => {
+
+const Header = (props) => {
     const history = useNavigate();
     const llevame = () => {
         history("/");
@@ -22,6 +24,7 @@ const Header = () => {
                 <Boton destino="Registro" url="/register"/>
                 <Boton destino="Login" url="/login"/>
                 <Boton destino="Peliculas" url="/Peliculas"/>
+               <div id="admin">{props.credentials?.user.rol=='admin' && <Boton destino="Admin" url="/admin"/>}</div> 
                 
             </div>
         </div>
@@ -29,4 +32,7 @@ const Header = () => {
 
 };
 
-export default Header;
+// export default Header;
+export default connect((state) => ({
+    credentials: state.credentials
+}))(Header);

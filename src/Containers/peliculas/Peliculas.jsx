@@ -10,10 +10,11 @@ const Peliculas = () => {
 
 
     const [peliculas, setPeliculas] = useState([]);
+    
 
     const recibirpeliculas = async () => {
 
-    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6InVzZXIxIiwiZW1haWwiOiJ1c2VyMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRGbUI1VHRhN1VFWmpiMXVzeWQvWlN1R1ZURndvVFNPcU9JSWtJSm9BRy40RS53UlRPLkJpRyIsInJvbCI6ImFkbWluIiwiX2lkIjoiNjE5MjE5NDgwNWE0ZDkzOTQxYzI4YTE1IiwiY3JlYXRlZEF0IjoiMjAyMS0xMS0xNVQwODoyNDo0MC4yMzhaIiwidXBkYXRlZEF0IjoiMjAyMS0xMS0xNVQwODoyNDo0MC4yMzhaIiwiX192IjowfSwiaWF0IjoxNjM2OTY0NjgwLCJleHAiOjE2MzcxODA2ODB9.Y9YXP5yazZjRmWgn0XRrBISgwFrwhYpqig0_v4Ltapw';
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6ImFybm9sZEFkbWluIiwiZW1haWwiOiJhcm5vbGRBZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQzRWJsR2tJbHRJNkhDYXhUaDBadWF1T2dBd21hT0lqanRjTXVoNXlFeFVDcnJnRExpQWxhSyIsInJvbCI6ImFkbWluIiwiX2lkIjoiNjE5MzZlNGY1NDMyMjAyOGYxNGRhNDc5IiwiY3JlYXRlZEF0IjoiMjAyMS0xMS0xNlQwODozOTo0My41NzNaIiwidXBkYXRlZEF0IjoiMjAyMS0xMS0xNlQwODozOTo0My41NzNaIiwiX192IjowfSwiaWF0IjoxNjM3MDUxOTgzLCJleHAiOjE2MzcyNjc5ODN9.rudSIj44EMevLHnzCtVBj_WxpCLBnOBfDxegI64PtQU';
   
 
     let config = {
@@ -22,6 +23,7 @@ const Peliculas = () => {
         let res = await axios.get('https://proyectopeliculasgeekshubs.herokuapp.com/peliculas', config);
         setPeliculas(res.data)
         console.log(res)
+        
     };
 
     useEffect(() => {
@@ -34,7 +36,10 @@ const Peliculas = () => {
         console.log(peliculas)
 
     });
-
+    
+    const eligePelicula = (escogida) => {
+        console.log(escogida);
+    }
 
     if(peliculas[1]?.titulo){
         console.log("Recibiendo Peliculas",peliculas)
@@ -44,7 +49,7 @@ const Peliculas = () => {
             
             {
                 peliculas.map((pelicula) => {
-                    return <div key = {pelicula._id}className="Peliculas"><p className="parrafo">{pelicula.titulo}</p></div>
+                    return <div key = {pelicula._id} onClick={()=>eligePelicula(pelicula)} className="Peliculas"><p className="parrafo">{pelicula.titulo}</p></div>
                 })
             }
 

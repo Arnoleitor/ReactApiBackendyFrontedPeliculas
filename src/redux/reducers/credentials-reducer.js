@@ -21,6 +21,7 @@ const credentialsReducer = (state = initialState, action) => {
             return { ...state, user: action.payload }; //emn user metes en este caso el body
         default:
             return state
+
     }
 }
 export default credentialsReducer;
