@@ -47,6 +47,7 @@ const Peliculas = () => {
 
     const alquilarPelicula = async (pelicula) => {
 
+
         const body = {
             
             numero: pelicula._id,
@@ -75,7 +76,7 @@ const Peliculas = () => {
 
                     {
                         peliculas.map((pelicula) => {
-                            return <div key={pelicula._id} onClick={() => eligePelicula(pelicula)} className="Peliculas"><p className="parrafo">{pelicula.titulo}</p> <button onClick={() => alquilarPelicula(pelicula)}>Alquilar</button></div>
+                            return <div key={pelicula._id} onClick={() => eligePelicula(pelicula)} className="Peliculas"><p className="parrafo">{pelicula.titulo}</p><div><button classname="alquiler" onClick={() => alquilarPelicula(pelicula)}>Alquilar</button></div></div>
                         })
                     }
 

@@ -74,8 +74,8 @@ const Profile = (props) => {
                 <h5 className="datosperfil">Datos de perfil</h5>
                 <div>Nombre:      {props.credentials.user.nombre}</div>
                 <div>Email:       {props.credentials.user.email}</div>
-                <div>Rol:       {props.credentials.user.rol}</div>
-                <div>Pedidos:       {props.credentials.user.pedidos}</div>
+                <div>Rol:         {props.credentials.user.rol}</div>
+                <div>Pedidos:     {props.credentials.user.pedidos}</div>
                 
                 <div id="logout" onClick={() => logOut()}>LOGOUT</div>
                 </div>
