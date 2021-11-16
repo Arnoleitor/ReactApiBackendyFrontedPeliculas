@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Peliculas.css';
 import {useNavigate} from 'react-router-dom';
 import loading from '../../assets/img/Dual Ring-0.9s-204px.gif';
+// import InfoPeliculas from '../InfoPeliculas/infoPeliculas';
 
 const Peliculas = () => {
 

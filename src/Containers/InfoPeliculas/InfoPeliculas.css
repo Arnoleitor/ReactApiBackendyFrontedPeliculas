@@ -1,0 +1,8 @@
+.InfoPeliculasStyle{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-size: cover;
+    cursor: pointer;
+}
