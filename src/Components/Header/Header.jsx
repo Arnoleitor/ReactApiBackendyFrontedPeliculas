@@ -24,7 +24,7 @@ const Header = (props) => {
                 <Boton destino="Registro" url="/register"/>
                 <Boton destino="Login" url="/login"/>
                 <Boton destino="Peliculas" url="/Peliculas"/>
-               <div id="admin">{props.credentials?.user.rol=='admin' && <Boton destino="Admin" url="/admin"/>}</div> 
+                <div id="admin">{props.credentials?.user.rol=='admin' && <Boton destino="Admin" url="/admin"/>}</div> 
                 
             </div>
         </div>

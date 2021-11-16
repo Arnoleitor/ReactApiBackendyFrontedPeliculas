@@ -75,6 +75,7 @@ const Profile = (props) => {
                 <div>Nombre:      {props.credentials.user.nombre}</div>
                 <div>Email:       {props.credentials.user.email}</div>
                 <div>Rol:       {props.credentials.user.rol}</div>
+                <div>Pedidos:       {props.credentials.user.pedidos}</div>
                 
                 <div id="logout" onClick={() => logOut()}>LOGOUT</div>
                 </div>
