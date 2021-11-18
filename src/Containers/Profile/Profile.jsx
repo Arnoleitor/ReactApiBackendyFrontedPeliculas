@@ -50,7 +50,7 @@ let config = {
 };
 
     const PEDIDO_PELICULA = async () => {
-        let res = await axios.get(`https://proyectopeliculasgeekshubs.herokuapp.com/pedidos/`,config);
+        let res = await axios.get(`https://proyectopeliculasgeekshubs.herokuapp.com/pedidos`,config);
         setPEDIDO_PELICULA(res.data);
         console.log(res.data.profile); 
 
@@ -111,19 +111,20 @@ let config = {
                 {/* <div className="user">{props.credentials?.user?.telefono}</div>
                 <div className="user">{props.credentials?.user?.direccion}</div> */}
                 
-
+                <div className="pedidopadre">
                 {
                     pedido_peliculas.map((pedido)=>{
                         return(
                             <div className="pedido">
                                 {
-                                    pedido.precioalquiler
+                                    pedido.dependiente
                                 }
                             </div>
                         )
                     })
                 }
                 
+            </div>
             </div>
 
 

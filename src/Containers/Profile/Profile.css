@@ -130,6 +130,15 @@
 }
 
 .pedido{
-    width: 0em;
-    height: 0em;
+    width: 5em;
+    margin-top: 1em;
+    height: 1em;
+}
+
+
+.pedidopadre{
+    width: 20em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

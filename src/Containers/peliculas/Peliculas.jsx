@@ -66,7 +66,7 @@ const Peliculas = () => {
         
         
 
-        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6ImFybm9sZEFkbWluIiwiZW1haWwiOiJhcm5vbGRBZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQzRWJsR2tJbHRJNkhDYXhUaDBadWF1T2dBd21hT0lqanRjTXVoNXlFeFVDcnJnRExpQWxhSyIsInJvbCI6ImFkbWluIiwiX2lkIjoiNjE5MzZlNGY1NDMyMjAyOGYxNGRhNDc5IiwiY3JlYXRlZEF0IjoiMjAyMS0xMS0xNlQwODozOTo0My41NzNaIiwidXBkYXRlZEF0IjoiMjAyMS0xMS0xNlQwODozOTo0My41NzNaIiwiX192IjowfSwiaWF0IjoxNjM3MDUxOTgzLCJleHAiOjE2MzcyNjc5ODN9.rudSIj44EMevLHnzCtVBj_WxpCLBnOBfDxegI64PtQU';
+        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6ImFybm9sZEFkbWluMSIsImVtYWlsIjoiYXJub2xkQWRtaW4xIiwicGFzc3dvcmQiOiIkMmIkMTAkbkJubWpmU3VrRGdpTkRrN3l5NktBLnpmUGdmWHV5MWptdlhoay9PemVFVThHb3lmd3k5UHEiLCJyb2wiOiJhZG1pbiIsIl9pZCI6IjYxOTZkMmVjOWExZTliZmYxODAyODRmOCIsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMThUMjI6MjU6NDguMTg5WiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMThUMjI6MjU6NDguMTg5WiIsIl9fdiI6MH0sImlhdCI6MTYzNzI3NDM0OCwiZXhwIjoxNjM3NDkwMzQ4fQ.Efp359DVRtcbqNx8C2a2XHfdLmYPvNtbApUz4QQcQEI';
                     let config = {
                         headers: { Authorization: `Bearer ${token}`,'Content-Type' : 'aplication/json','access-control-allow-origin':'*'}
                     };
