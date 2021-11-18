@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT, UPDATE_USER } from '../types';
+import { LOGIN, LOGOUT, UPDATE_USER, PEDIDO_PELICULA } from '../types';
 
 const initialState = {
     user: {},

@@ -128,3 +128,8 @@
     font-family: unset;
     text-decoration: underline 2px;
 }
+
+.pedido{
+    width: 0em;
+    height: 0em;
+}

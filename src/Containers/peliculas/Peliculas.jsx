@@ -17,7 +17,7 @@ const Peliculas = () => {
 
     const recibirpeliculas = async () => {
 
-        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6ImFybm9sZEFkbWluIiwiZW1haWwiOiJhcm5vbGRBZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQzRWJsR2tJbHRJNkhDYXhUaDBadWF1T2dBd21hT0lqanRjTXVoNXlFeFVDcnJnRExpQWxhSyIsInJvbCI6ImFkbWluIiwiX2lkIjoiNjE5MzZlNGY1NDMyMjAyOGYxNGRhNDc5IiwiY3JlYXRlZEF0IjoiMjAyMS0xMS0xNlQwODozOTo0My41NzNaIiwidXBkYXRlZEF0IjoiMjAyMS0xMS0xNlQwODozOTo0My41NzNaIiwiX192IjowfSwiaWF0IjoxNjM3MDUxOTgzLCJleHAiOjE2MzcyNjc5ODN9.rudSIj44EMevLHnzCtVBj_WxpCLBnOBfDxegI64PtQU';
+        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6ImFybm9sZEFkbWluMSIsImVtYWlsIjoiYXJub2xkQWRtaW4xIiwicGFzc3dvcmQiOiIkMmIkMTAkL3FSUThtU2R6VGhRR2RyY3prNkx3T2pxNnMuTTRBaXh4M29xcExsNHV1Y2x6Q2Rzc1A2Z3kiLCJyb2wiOiJhZG1pbiIsIl9pZCI6IjYxOTZjNjg0OWExZTliZmYxODAyODRjYSIsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMThUMjE6MzI6NTIuMTM1WiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMThUMjE6MzI6NTIuMTM1WiIsIl9fdiI6MH0sImlhdCI6MTYzNzI3MTE3MiwiZXhwIjoxNjM3NDg3MTcyfQ.v2i8MNNhCFDXrd1ul4-rQT6VKhED4Pf1laplbM6rsg0';
 
 
 
@@ -33,13 +33,15 @@ const Peliculas = () => {
     useEffect(() => {
         setTimeout(() => {
             recibirpeliculas();
-        }, 2000);
+        }, 1000);
     }, []);
 
     useEffect(() => {
         console.log(peliculas)
 
     });
+
+    
 
     const eligePelicula = (escogida) => {
         console.log(escogida);
@@ -58,6 +60,10 @@ const Peliculas = () => {
         
             
         }
+            
+            
+            //redireccionar a otra O MOSTRAR MENSAJE DE ACTUALIZACIÓN
+        
         
 
         let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6ImFybm9sZEFkbWluIiwiZW1haWwiOiJhcm5vbGRBZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQzRWJsR2tJbHRJNkhDYXhUaDBadWF1T2dBd21hT0lqanRjTXVoNXlFeFVDcnJnRExpQWxhSyIsInJvbCI6ImFkbWluIiwiX2lkIjoiNjE5MzZlNGY1NDMyMjAyOGYxNGRhNDc5IiwiY3JlYXRlZEF0IjoiMjAyMS0xMS0xNlQwODozOTo0My41NzNaIiwidXBkYXRlZEF0IjoiMjAyMS0xMS0xNlQwODozOTo0My41NzNaIiwiX192IjowfSwiaWF0IjoxNjM3MDUxOTgzLCJleHAiOjE2MzcyNjc5ODN9.rudSIj44EMevLHnzCtVBj_WxpCLBnOBfDxegI64PtQU';
@@ -70,6 +76,9 @@ const Peliculas = () => {
         console.log("respuesta", res)
         
     }
+
+
+    
 
     if (peliculas[1]?.titulo) {
         console.log("Recibiendo Peliculas", peliculas)

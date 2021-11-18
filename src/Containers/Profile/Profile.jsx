@@ -2,18 +2,18 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import './Profile.css';
-import { LOGOUT, UPDATE_USER } from '../../redux/types';
+import { LOGOUT, UPDATE_USER, PEDIDO_PELICULA } from '../../redux/types';
 import axios from 'axios';
 
 
 
 const Profile = (props) => {
-
+    
     
 
     const [msgError, setmsgError] = useState("");
     const [userData, setUserData] = useState(props.credentials.user);
-   
+    const [pedido_peliculas, setPEDIDO_PELICULA] = useState([]);
 
     const manejaInputs = (e) => {
         setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -42,6 +42,24 @@ const Profile = (props) => {
 
     }
 
+//////////////////////////////
+
+
+let config = {
+    headers: { Authorization: `Bearer ${props.credentials.token}`}
+};
+
+    const PEDIDO_PELICULA = async () => {
+        let res = await axios.get(`https://proyectopeliculasgeekshubs.herokuapp.com/pedidos/`,config);
+        setPEDIDO_PELICULA(res.data);
+        console.log(res.data.profile); 
+
+
+};
+//////////////////////////////
+
+
+
     const logOut = () => {
         //Hook 
         // const [datosPerfil, setDatosPerfil] = useState(JSON.parse(localStorage.getItem("datosLogin")));
@@ -55,6 +73,10 @@ const Profile = (props) => {
 
     }, [props.credentials]);
 
+    useEffect(() => {
+
+        PEDIDO_PELICULA()
+    }, [])
    
 
     if (props.credentials?.token !== '') {
@@ -77,7 +99,7 @@ const Profile = (props) => {
                 <div>Nombre:      {props.credentials.user.nombre}</div>
                 <div>Email:       {props.credentials.user.email}</div>
                 <div>Rol:         {props.credentials.user.rol}</div>
-                <div>Pedidos:     {props.credentials.user.pedidos}</div>
+                <div>Pedidos:     {props.credentials.user.pedido}</div>
                 
                 <div id="logout" onClick={() => logOut()}>CERRAR SESIÓN</div>
                 </div>
@@ -89,6 +111,18 @@ const Profile = (props) => {
                 {/* <div className="user">{props.credentials?.user?.telefono}</div>
                 <div className="user">{props.credentials?.user?.direccion}</div> */}
                 
+
+                {
+                    pedido_peliculas.map((pedido)=>{
+                        return(
+                            <div className="pedido">
+                                {
+                                    pedido.precioalquiler
+                                }
+                            </div>
+                        )
+                    })
+                }
                 
             </div>
 
