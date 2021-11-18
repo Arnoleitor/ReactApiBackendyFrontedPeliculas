@@ -63,21 +63,23 @@ const Profile = (props) => {
             
             <div className="designProfile">
                 <div className="cuadrado1">
+                <h5 className="datosacceso">Datos de acceso</h5>
                     <div className="user"><input id="nombre" placeholder="Introduce nuevo nombre" value={userData?.nombre || ""} name="nombre" onChange={manejaInputs} /></div>
                     <div className="user"><input id="email" placeholder="Introduce nuevo email" value={userData?.email || ""} name="email" onChange={manejaInputs} /></div>
                     {/* <div className="user"><input id="contraseña" placeholder="introduce nueva contraseña" value={userData?.password || ""} name="password" onChange={manejaInputs}/></div> */}
-                    <div className="update" onClick={() => update()}>ACTUALIZAR</div>
+                    <div className="update" onClick={() => update()}>ACTUALIZAR TUS DATOS</div>
                     
 
                 </div>
                 <div className="recuadroperfilInfo">
                 <h5 className="datosperfil">Datos de perfil</h5>
+
                 <div>Nombre:      {props.credentials.user.nombre}</div>
                 <div>Email:       {props.credentials.user.email}</div>
                 <div>Rol:         {props.credentials.user.rol}</div>
                 <div>Pedidos:     {props.credentials.user.pedidos}</div>
                 
-                <div id="logout" onClick={() => logOut()}>LOGOUT</div>
+                <div id="logout" onClick={() => logOut()}>CERRAR SESIÓN</div>
                 </div>
                 {/* <pre>{JSON.stringify(userData, null, 2)}</pre> */}
                 

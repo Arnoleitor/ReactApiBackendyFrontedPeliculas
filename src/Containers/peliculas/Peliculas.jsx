@@ -54,9 +54,11 @@ const Peliculas = () => {
             dependiente:"Tobi",
             fechaalquiler:new Date(),
             fechaentrega:new Date(),
-            precioalquiler:"€9,89"
+            precioalquiler:"€9,89",
+        
             
         }
+        
 
         let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6ImFybm9sZEFkbWluIiwiZW1haWwiOiJhcm5vbGRBZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQzRWJsR2tJbHRJNkhDYXhUaDBadWF1T2dBd21hT0lqanRjTXVoNXlFeFVDcnJnRExpQWxhSyIsInJvbCI6ImFkbWluIiwiX2lkIjoiNjE5MzZlNGY1NDMyMjAyOGYxNGRhNDc5IiwiY3JlYXRlZEF0IjoiMjAyMS0xMS0xNlQwODozOTo0My41NzNaIiwidXBkYXRlZEF0IjoiMjAyMS0xMS0xNlQwODozOTo0My41NzNaIiwiX192IjowfSwiaWF0IjoxNjM3MDUxOTgzLCJleHAiOjE2MzcyNjc5ODN9.rudSIj44EMevLHnzCtVBj_WxpCLBnOBfDxegI64PtQU';
                     let config = {
@@ -66,6 +68,7 @@ const Peliculas = () => {
         let res = await axios.post("https://proyectopeliculasgeekshubs.herokuapp.com/pedidos",  body,{headers: { Authorization: `Bearer ${token}`,'Content-Type' : 'application/json',accept:'application/json','access-control-allow-origin':'*'}});
         
         console.log("respuesta", res)
+        
     }
 
     if (peliculas[1]?.titulo) {

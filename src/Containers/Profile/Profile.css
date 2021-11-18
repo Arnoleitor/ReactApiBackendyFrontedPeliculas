@@ -89,7 +89,7 @@
     background-color: rgb(255 0 0);
     transform: scale(1.1);
     height: 2.1em;
-    width: 7em;
+    width: 8em;
     border-radius: 0.5em;
     display: flex;
     align-items: center;
@@ -101,7 +101,7 @@
     background-color: rgb(255 0 0);
     transform: scale(1.1);
     height: 2.1em;
-    width: 7em;
+    width: 12em;
     border-radius: 0.5em;
     display: flex;
     align-items: center;
@@ -116,6 +116,13 @@
 }
 
 .datosperfil{
+    font-size: 1.2em;
+    color: black;
+    font-family: unset;
+    text-decoration: underline 2px;
+}
+
+.datosacceso{
     font-size: 1.2em;
     color: black;
     font-family: unset;
