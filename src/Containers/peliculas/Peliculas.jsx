@@ -3,6 +3,8 @@ import axios from 'axios';
 import './Peliculas.css';
 import { useNavigate } from 'react-router-dom';
 import loading from '../../assets/img/Dual Ring-0.9s-204px.gif';
+import store from '../../redux/store';
+
 // import InfoPeliculas from '../InfoPeliculas/infoPeliculas';
 
 
@@ -11,8 +13,11 @@ const Peliculas = () => {
 
     let navigate = useNavigate();
 
+    
 
     const [peliculas, setPeliculas] = useState([]);
+    
+    
 
 
     const recibirpeliculas = async () => {
@@ -33,6 +38,8 @@ const Peliculas = () => {
     useEffect(() => {
         setTimeout(() => {
             recibirpeliculas();
+            store.subscribe(a=> console.log(store.getState()));
+            console.log("hola")
         }, 1000);
     }, []);
 
@@ -46,6 +53,9 @@ const Peliculas = () => {
     const eligePelicula = (escogida) => {
         console.log(escogida);
     }
+
+
+
 
     const alquilarPelicula = async (pelicula) => {
 
