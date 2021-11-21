@@ -8,6 +8,8 @@ const Admin = () => {
 
     return (
         <div class='AdminStyle'></div>
+
+        
     )
 };
 
