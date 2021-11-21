@@ -99,7 +99,6 @@ let config = {
                 <div>Nombre:      {props.credentials.user.nombre}</div>
                 <div>Email:       {props.credentials.user.email}</div>
                 <div>Rol:         {props.credentials.user.rol}</div>
-                <div>Pedidos:     {props.credentials.user.pedido}</div>
                 
                 <div id="logout" onClick={() => logOut()}>CERRAR SESIÓN</div>
                 </div>
@@ -112,6 +111,7 @@ let config = {
                 <div className="user">{props.credentials?.user?.direccion}</div> */}
                 
                 <div className="pedidopadre">
+                <h5 className="pedidos">Pedidos</h5>
                 {
                     pedido_peliculas.map((pedido)=>{
                         return(

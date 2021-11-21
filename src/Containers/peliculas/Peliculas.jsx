@@ -98,7 +98,7 @@ const Peliculas = () => {
         
         return (
             <div className="Estrenos"><h1 className="tituloPeliculas">Los mejores estrenos 2021</h1>
-                <input placeholder ="Busqueda de peliculas" onChange={event => setQuery(event.target.value)}/>
+               <h5 className="buscatupelicula">🎥 BUSCA TU PELICULA 🎥</h5> <input id="buscador" placeholder ="Busqueda de peliculas" onChange={event => setQuery(event.target.value)}/>
                 
                     
                     <div className="mostrarpeliculas">

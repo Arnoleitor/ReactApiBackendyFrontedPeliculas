@@ -129,26 +129,35 @@
     text-decoration: underline 2px;
 }
 
-.pedido{
-    width: 5em;
-    margin-top: 1em;
+.pedido {
+
+    margin-top: 0.5em;
     height: 1em;
-    transition: 0.4s;
     background-color: darkred;
-    transform: scale(1.1);
-    height: 2.1em;
-    width: 12em;
+    height: 3.1em;
+    width: 17em;
     border-radius: 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 
 .pedidopadre{
-    width: 20em;
-    display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    height: 20em;
+    width: 73em;
+    background-color: gray;
+    border-radius: 1.2em;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 3px 2px #ff0000;
+    justify-content: unset;
+}
+
+.pedidos{
+    font-size: 4.2em;
+    font-family: unset;
 }
