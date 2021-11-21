@@ -118,8 +118,10 @@ let config = {
                             <div className="pedido">
                                 {
                                     pedido.titulo
+                                   
                                 }
                             </div>
+                            
                         )
                     })
                 }
