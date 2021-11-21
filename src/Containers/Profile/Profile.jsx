@@ -119,6 +119,8 @@ let config = {
                                 {
                                     pedido.titulo
                                    
+                                } : {
+                                    pedido.precioalquiler
                                 }
                             </div>
                             

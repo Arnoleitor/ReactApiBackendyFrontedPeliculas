@@ -16,6 +16,7 @@ const Peliculas = () => {
     
 
     const [peliculas, setPeliculas] = useState([]);
+    const [query, setQuery] = useState("")
     
     
 
@@ -68,7 +69,7 @@ const Peliculas = () => {
             dependiente:"Tobi",
             fechaalquiler:new Date(),
             fechaentrega:new Date(),
-            precioalquiler:"€9,89",
+            precioalquiler:`${Math.floor(Math.random() * (1000 - 100) + 100) / 100}€`,
         
             
         }
@@ -94,14 +95,27 @@ const Peliculas = () => {
 
     if (peliculas[1]?.titulo) {
         console.log("Recibiendo Peliculas", peliculas)
+        
         return (
             <div className="Estrenos"><h1 className="tituloPeliculas">Los mejores estrenos 2021</h1>
-                <div className="mostrarpeliculas">
+                <input placeholder ="Busqueda de peliculas" onChange={event => setQuery(event.target.value)}/>
+                
+                    
+                    <div className="mostrarpeliculas">
+                    
+                
 
                     {
-                        peliculas.map((pelicula) => {
-                            return <div key={pelicula._id} onClick={() => eligePelicula(pelicula)} className="Peliculas"><p className="parrafo">{pelicula.titulo}</p><div><button classname="alquiler" onClick={() => alquilarPelicula(pelicula)}>Alquilar</button></div></div>
+                        peliculas.filter((pelicula) =>{
+                            if (query === '') {
+                            return pelicula;
+                            } else if (pelicula.titulo.toLowerCase().includes(query.toLowerCase())) {
+                            return pelicula;
+                             }
+                            }).map((pelicula, index) => {
+                            return <div key={index} onClick={() => eligePelicula(pelicula)} className="Peliculas"><p className="parrafo">{pelicula.titulo}</p><div><button classname="alquiler" onClick={() => alquilarPelicula(pelicula)}>Alquilar</button></div></div>
                         })
+
                     }
 
                 </div></div>
