@@ -22,7 +22,7 @@ const Peliculas = () => {
 
     const recibirpeliculas = async () => {
 
-        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6ImFybm9sZEFkbWluMSIsImVtYWlsIjoiYXJub2xkQWRtaW4xIiwicGFzc3dvcmQiOiIkMmIkMTAkL3FSUThtU2R6VGhRR2RyY3prNkx3T2pxNnMuTTRBaXh4M29xcExsNHV1Y2x6Q2Rzc1A2Z3kiLCJyb2wiOiJhZG1pbiIsIl9pZCI6IjYxOTZjNjg0OWExZTliZmYxODAyODRjYSIsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMThUMjE6MzI6NTIuMTM1WiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMThUMjE6MzI6NTIuMTM1WiIsIl9fdiI6MH0sImlhdCI6MTYzNzI3MTE3MiwiZXhwIjoxNjM3NDg3MTcyfQ.v2i8MNNhCFDXrd1ul4-rQT6VKhED4Pf1laplbM6rsg0';
+        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6ImFkbWluaXN0cmFkb3IiLCJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkOWhCSVhtSnByRVIybGNQNDQzSGgydXVzeVE5bEJBblFCbDZLTzA3RHB3ZFpCZXZKcHY1QU8iLCJyb2wiOiJhZG1pbiIsIl9pZCI6IjYxOWExNDZiNjY4ODhmOGRjYmYwOTFiMCIsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMjFUMDk6NDI6MDMuMjk5WiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMjFUMDk6NDI6MDMuMjk5WiIsIl9fdiI6MH0sImlhdCI6MTYzNzQ4NzcyMywiZXhwIjoxNjM3NzAzNzIzfQ.mQGVutKgWKM1z0StBbXY0BXXSGEIRolLK4jboJek9Ng';
 
 
 
@@ -62,6 +62,7 @@ const Peliculas = () => {
 
         const body = {
             
+            titulo: pelicula.titulo,
             numero: pelicula._id,
             dependiente:"Tobi",
             fechaalquiler:new Date(),

@@ -50,7 +50,7 @@ let config = {
 };
 
     const PEDIDO_PELICULA = async () => {
-        let res = await axios.get(`https://proyectopeliculasgeekshubs.herokuapp.com/pedidos`,config);
+        let res = await axios.get(`https://proyectopeliculasgeekshubs.herokuapp.com/pedidos/user/getAll`,config);
         setPEDIDO_PELICULA(res.data);
         console.log(res.data.profile); 
 
@@ -117,7 +117,7 @@ let config = {
                         return(
                             <div className="pedido">
                                 {
-                                    pedido.dependiente
+                                    pedido.titulo
                                 }
                             </div>
                         )
