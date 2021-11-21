@@ -4,12 +4,13 @@ import './Peliculas.css';
 import { useNavigate } from 'react-router-dom';
 import loading from '../../assets/img/Dual Ring-0.9s-204px.gif';
 import store from '../../redux/store';
+import { connect } from 'react-redux';
 
 // import InfoPeliculas from '../InfoPeliculas/infoPeliculas';
 
 
 
-const Peliculas = () => {
+const Peliculas = (props) => {
 
     let navigate = useNavigate();
 
@@ -23,7 +24,7 @@ const Peliculas = () => {
 
     const recibirpeliculas = async () => {
 
-        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6ImFkbWluaXN0cmFkb3IiLCJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkOWhCSVhtSnByRVIybGNQNDQzSGgydXVzeVE5bEJBblFCbDZLTzA3RHB3ZFpCZXZKcHY1QU8iLCJyb2wiOiJhZG1pbiIsIl9pZCI6IjYxOWExNDZiNjY4ODhmOGRjYmYwOTFiMCIsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMjFUMDk6NDI6MDMuMjk5WiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMjFUMDk6NDI6MDMuMjk5WiIsIl9fdiI6MH0sImlhdCI6MTYzNzQ4NzcyMywiZXhwIjoxNjM3NzAzNzIzfQ.mQGVutKgWKM1z0StBbXY0BXXSGEIRolLK4jboJek9Ng';
+        let token = props.credentials.token;
 
 
 
@@ -59,7 +60,7 @@ const Peliculas = () => {
 
 
     const alquilarPelicula = async (pelicula) => {
-        console.log(pelicula)
+        console.log(props.credentials.user._id)
 
 
         const body = {
@@ -70,21 +71,22 @@ const Peliculas = () => {
             fechaalquiler:new Date(),
             fechaentrega:new Date(),
             precioalquiler:`${Math.floor(Math.random() * (1000 - 100) + 100) / 100}€`,
+            usuarioid: props.credentials.user._id
+
         
             
         }
             console.log(body)
             
-            //redireccionar a otra O MOSTRAR MENSAJE DE ACTUALIZACIÓN
         
         
 
-        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5vbWJyZSI6ImFkbWluaXN0cmFkb3IiLCJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkOWhCSVhtSnByRVIybGNQNDQzSGgydXVzeVE5bEJBblFCbDZLTzA3RHB3ZFpCZXZKcHY1QU8iLCJyb2wiOiJhZG1pbiIsIl9pZCI6IjYxOWExNDZiNjY4ODhmOGRjYmYwOTFiMCIsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMjFUMDk6NDI6MDMuMjk5WiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMjFUMDk6NDI6MDMuMjk5WiIsIl9fdiI6MH0sImlhdCI6MTYzNzQ4NzcyMywiZXhwIjoxNjM3NzAzNzIzfQ.mQGVutKgWKM1z0StBbXY0BXXSGEIRolLK4jboJek9Ng';
+        let token = props.credentials.token;
                     let config = {
-                        headers: { Authorization: `Bearer ${token}`,'Content-Type' : 'aplication/json','access-control-allow-origin':'*'}
+                        headers: { Authorization: `Bearer ${token}`}
                     };
 
-        let res = await axios.post("https://proyectopeliculasgeekshubs.herokuapp.com/pedidos",  body,{headers: { Authorization: `Bearer ${token}`,'Content-Type' : 'application/json',accept:'application/json','access-control-allow-origin':'*'}});
+        let res = await axios.post("https://proyectopeliculasgeekshubs.herokuapp.com/pedidos",  body, config);
         
         console.log("respuesta", res)
         
@@ -132,4 +134,6 @@ const Peliculas = () => {
     }
 };
 
-export default Peliculas;
+export default connect((state)=>({
+    credentials: state.credentials,
+}))(Peliculas);

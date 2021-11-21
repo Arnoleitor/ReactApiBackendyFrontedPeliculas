@@ -45,12 +45,13 @@ const Profile = (props) => {
 //////////////////////////////
 
 
+
 let config = {
     headers: { Authorization: `Bearer ${props.credentials.token}`}
 };
 
     const PEDIDO_PELICULA = async () => {
-        let res = await axios.get(`https://proyectopeliculasgeekshubs.herokuapp.com/pedidos/user/getAll`,config);
+        let res = await axios.get(`https://proyectopeliculasgeekshubs.herokuapp.com/pedidos/user/${props.credentials.user._id}`,config);
         setPEDIDO_PELICULA(res.data);
         console.log(res.data.profile); 
 
