@@ -1,15 +1,15 @@
-import './InfoPeliculas.css';
-import React from 'react';
-import '../../Containers/peliculas/Peliculas';
-import { ESCOGE_PELICULA } from '../../redux/types';
+// import './InfoPeliculas.css';
+// import React from 'react';
+// import '../../Containers/peliculas/Peliculas';
+// import { ESCOGE_PELICULA } from '../../redux/types';
 
-props.dispatch({type:ESCOGE_PELICULA,payload:datos});
+// props.dispatch({type:ESCOGE_PELICULA,payload:datos});
 
-const InfoPeliculas = () => {
+// const InfoPeliculas = () => {
 
-    return (
-        <div class='InfoPeliculasStyle'></div>
-    )
-};
+//     return (
+//         <div class='InfoPeliculasStyle'></div>
+//     )
+// };
 
-export default InfoPeliculas;
+// export default InfoPeliculas;

@@ -10,6 +10,7 @@ const Home = () => {
         
         <div class='designHome'></div>
         
+        
     )
 };
 

@@ -117,7 +117,7 @@ const Register = () => {
             {/* <input type='text' name='address' title='address' onChange={userHandler} lenght='30' placeholder='Direccion' />
             <input type='text' name='city' title='city' onChange={userHandler} lenght='30' placeholder='Ciudad' />
             <input type='number' name='cp' title='cp' onChange={userHandler} lenght='5' placeholder='C.Postal' /> */}
-            <input id="relleno3" type='text' name='password' title='password' onChange={userHandler} lenght='30' placeholder='Password' />
+            <input id="relleno3" type='password' name='password' title='password' onChange={userHandler} lenght='30' placeholder='Password' />
             {/* <input type='text' name='password2' title='password2' onChange={userHandler} lenght='30' placeholder='Repite Password' /> */}
             {/* <input type='text' name='rol' title='rol' onChange={userHandler} lenght='20' placeholder='rol' /> */}
             <div className="botonSend" onClick={() => enviaDatosRegistro()}>Registrame</div>

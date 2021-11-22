@@ -117,16 +117,16 @@
 
 .datosperfil{
     font-size: 1.2em;
-    color: black;
+    color: white;
     font-family: unset;
-    text-decoration: underline 2px;
+   
 }
 
 .datosacceso{
     font-size: 1.2em;
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: unset;
-    text-decoration: underline 2px;
+    
 }
 
 .pedido {
@@ -145,8 +145,8 @@
 
 .pedidopadre{
     flex-wrap: wrap;
-    height: 20em;
-    width: 73em;
+    height: 23em;
+    width: 36em;
     background-color: gray;
     border-radius: 1.2em;
     cursor: pointer;
@@ -158,6 +158,6 @@
 }
 
 .pedidos{
-    font-size: 4.2em;
+    font-size: 2.2em;
     font-family: unset;
 }
