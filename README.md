@@ -24,8 +24,8 @@ Las tecnologias usadas en este proyecto son las siguientes:📔
 <p aling="center">
   <img src="./src/Images/Registro.png" width="500" title="hover text">
 </p>
-Requiere 'Nombre,Email,Contraseña'
-El nombre no debe contener números,el email debe contener @ y punto,la contraseña debe tener un mínimo de 8 carácteres.
+Requiere: 'Nombre,Email,Contraseña'
+El nombre no debe contener solo números,el email debe contener @ y punto,la contraseña debe tener un mínimo de 8 carácteres.
 
 <h2>Pantalla de login:</h2>
 
