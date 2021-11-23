@@ -91,14 +91,9 @@ const Register = () => {
 
         } catch (error) {
             console.log(error)
-            setmsgError("No se ha podido registrar el usuario");
+            setmsgError("No se ha podido registrar el usuario,este correo ya existe!!");
             return;
         }
-        
-        
-
-        
-        
         setTimeout(()=>{
             history("/Login");
         },2000);
