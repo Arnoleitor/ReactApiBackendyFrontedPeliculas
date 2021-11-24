@@ -14,12 +14,17 @@ const Peliculas = (props) => {
 
     let navigate = useNavigate();
 
-    
+
 
     const [peliculas, setPeliculas] = useState([]);
     const [query, setQuery] = useState("")
-    
-    
+    const [peliculasinfo, setpeliculasinfo] = useState("")
+    const [peliculasinfodirector, setpeliculasinfodirector] = useState("")
+    const [peliculasinfogenero, setpeliculasinfogenero] = useState("")
+    const [peliculasinfoduracion, setpeliculasinfoduracion] = useState("")
+    const [peliculasinfolanzamiento, setpeliculasinfolanzamiento] = useState("")
+
+
 
 
     const recibirpeliculas = async () => {
@@ -29,98 +34,122 @@ const Peliculas = (props) => {
 
 
         let config = {
-            headers: { Authorization: `Bearer ${token}`}
+            headers: { Authorization: `Bearer ${token}` }
         };
         let res = await axios.get('https://proyectopeliculasgeekshubs.herokuapp.com/peliculas', config);
         setPeliculas(res.data)
-        
+
 
     };
 
     useEffect(() => {
         setTimeout(() => {
             recibirpeliculas();
-            store.subscribe(a=> console.log(store.getState()));
-            
+            store.subscribe(a => console.log(store.getState()));
+
         }, 1000);
     }, []);
 
     useEffect(() => {
-        
+
 
     });
 
-    
+
 
     const eligePelicula = (escogida) => {
-        
+
     }
 
+    const cierreAlquiler= () => {
+    
 
-
+        let element = document.getElementById("myDIV");
+        element.classList.remove("mystyle");
+    }
 
     const alquilarPelicula = async (pelicula) => {
+
+        let element = document.getElementById("myDIV");
+        element.classList.add("mystyle");
+        setpeliculasinfo(pelicula.titulo);
+        setpeliculasinfodirector(pelicula.director);
+        setpeliculasinfoduracion(pelicula.duracion);
+        setpeliculasinfogenero(pelicula.genero);
+        setpeliculasinfolanzamiento(pelicula.lanzamiento);
         
-
-
         const body = {
-            
+
             titulo: pelicula.titulo,
             numero: pelicula._id,
-            dependiente:"Tobi",
-            fechaalquiler:new Date(),
-            fechaentrega:new Date(),
-            precioalquiler:`${Math.floor(Math.random() * (1000 - 100) + 100) / 100}€`,
+            dependiente: "Tobi",
+            fechaalquiler: new Date(),
+            fechaentrega: new Date(),
+            precioalquiler: `${Math.floor(Math.random() * (1000 - 100) + 100) / 100}€`,
             usuarioid: props.credentials.user._id
 
-        
-            
+
+
         }
-            
-            
-        
-        
+
+
+
+
 
         let token = props.credentials.token;
-                    let config = {
-                        headers: { Authorization: `Bearer ${token}`}
-                    };
+        let config = {
+            headers: { Authorization: `Bearer ${token}` }
+        };
 
-        let res = await axios.post("https://proyectopeliculasgeekshubs.herokuapp.com/pedidos",  body, config);
-        
-        
-        
+        let res = await axios.post("https://proyectopeliculasgeekshubs.herokuapp.com/pedidos", body, config);
+
+
+
     }
 
 
-    
+
 
     if (peliculas[1]?.titulo) {
         console.log("Recibiendo Peliculas", peliculas)
-        
+
         return (
             <div className="Estrenos"><h1 className="tituloPeliculas">Los mejores estrenos 2021</h1>
-               <h5 className="buscatupelicula">🎥 BUSCA TU PELICULA 🎥</h5> <input id="buscador" placeholder ="Busqueda de peliculas" onChange={event => setQuery(event.target.value)}/>
-                
-                    
-                    <div className="mostrarpeliculas">
-                    
-                
+                <h5 className="buscatupelicula">🎥 BUSCA TU PELICULA 🎥</h5> <input id="buscador" placeholder="Busqueda de peliculas" onChange={event => setQuery(event.target.value)} />
+
+
+                <div className="mostrarpeliculas">
+
+
 
                     {
-                        peliculas.filter((pelicula) =>{
+                        peliculas.filter((pelicula) => {
                             if (query === '') {
-                            return pelicula;
+                                return pelicula;
                             } else if (pelicula.titulo.toLowerCase().includes(query.toLowerCase())) {
-                            return pelicula;
-                             }
-                            }).map((pelicula, index) => {
+                                return pelicula;
+                            }
+                        }).map((pelicula, index) => {
                             return <div key={index} onClick={() => eligePelicula(pelicula)} className="Peliculas"><p className="parrafo">{pelicula.titulo}</p><div><button className="alquiler" onClick={() => alquilarPelicula(pelicula)}>Alquilar</button></div></div>
                         })
 
                     }
 
-                </div></div>
+                </div>
+                
+                <div className="abrepeliculas" id="myDIV">
+                <div className="salida" id="X" onClick={() => cierreAlquiler()}>X</div>
+                <div>🎬Has alquilado la siguiente pelicula🎬</div> 
+                <div>Título:  {peliculasinfo}</div>
+                <div>Director:  {peliculasinfodirector}</div>
+                <div>Género:  {peliculasinfogenero}</div>
+                <div>Duración:  {peliculasinfoduracion}</div>
+                <div>Lanzamiento:  {peliculasinfolanzamiento}</div>
+                
+                </div>
+                
+                </div>
+
 
         )
     } else {
@@ -134,6 +163,6 @@ const Peliculas = (props) => {
     }
 };
 
-export default connect((state)=>({
+export default connect((state) => ({
     credentials: state.credentials,
 }))(Peliculas);
