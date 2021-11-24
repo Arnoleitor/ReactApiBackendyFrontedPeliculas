@@ -1,9 +1,96 @@
-.AdminStyle{
-    background-image: linear-gradient( rgb(0 0 0 / 49%), rgb(0 0 0 / 94%) ), url(../../assets/img/fondoHome.jpg);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-size: cover;
-    cursor: pointer;
+.print-fields {
+    padding: 0px 20px;
 }
+.main-container-one {
+    display: flex;
+    padding: 3em 0em;
+    flex-direction: column;
+    margin: auto;
+    background-color: brown;
+}
+tr, td {
+    color:white;
+}
+table.table-film-reserve {
+    margin-top: 3em;
+    border-radius: 10px;
+    padding: 0.5em;
+    padding: 0.5em;
+    border: 1px solid red;
+    display: flex;
+}
+td.td-one {
+    width: 6em;
+    display: flex;
+    height: 100%;
+    padding: 1em;
+}
+td.td-two {
+    padding: 1em;
+}
+.film-reserved {
+    padding-left: 10em;
+}
+img.profile-image-films {
+    height: 15em;
+}
+.table-print-pedidos {
+    display: flex;
+}
+.colum-components-admin-print-pedidos{
+    width: 14em;
+    background-color:white;
+    height: 100%;
+    padding: 0em 1em;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+}
+.colum-components-admin-print-pedidos-titles{
+    width: 14em;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    padding: 0em 1em;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+}
+.admin-h1{
+    text-align: center;
+}
+.last-order-titles {
+    display: flex;
+}
+.colum-components-admin-print {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 0.01px solid;
+    border-right: 0.01px solid;
+    padding: 15px 15px ;
+    width: 14em;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
+.users-registers-title {
+    display: flex;
+    justify-content: center;
+}
+p.colum-components-admin-print-register{
+border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 0.01px solid;
+    border-right: 0.01px solid;
+    padding: 15px 15px;
+    width: 14em;
+    margin: 0;
+    background-color: rgb(255, 255, 255)}
+ .last-order-titles {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;}
+
+#table-home-print{
+    display: flex;
+    justify-content: center;
+    background-color: brown;
+    }

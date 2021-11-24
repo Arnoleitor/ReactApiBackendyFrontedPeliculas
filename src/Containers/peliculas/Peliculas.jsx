@@ -115,7 +115,7 @@ const Peliculas = (props) => {
                             return pelicula;
                              }
                             }).map((pelicula, index) => {
-                            return <div key={index} onClick={() => eligePelicula(pelicula)} className="Peliculas"><p className="parrafo">{pelicula.titulo}</p><div><button classname="alquiler" onClick={() => alquilarPelicula(pelicula)}>Alquilar</button></div></div>
+                            return <div key={index} onClick={() => eligePelicula(pelicula)} className="Peliculas"><p className="parrafo">{pelicula.titulo}</p><div><button className="alquiler" onClick={() => alquilarPelicula(pelicula)}>Alquilar</button></div></div>
                         })
 
                     }
