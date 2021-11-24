@@ -9,7 +9,7 @@ const Admin = (props) => {
     const [datosusuario, setdatosusuario] = useState("");
     const [datospedidos, setdatospedidos] = useState("");
     useEffect(() => {
-        console.log("credenciales",props.credentials)
+        
         takeusers();
         takepedidos();
     }, [])
@@ -17,7 +17,7 @@ const Admin = (props) => {
         try {
             let res = await axios.get("https://proyectopeliculasgeekshubs.herokuapp.com/usuario");
             setdatosusuario(res.data);
-            console.log("res: ", res)
+            
         } catch (error) {
             console.log(error);
         }
@@ -31,13 +31,13 @@ const Admin = (props) => {
                 }
             });
             setdatospedidos(res_pedidos.data);
-            console.log("res pedidos: ", res_pedidos)
+            
         } catch (error) {
             console.log(error);
         }
     };
     if (props.data_user?.token !== '') {
-        console.log("entre aqui.");
+        
         return (
             <div className="main-container">
                 <div className="main-container-one">
@@ -97,7 +97,7 @@ const Admin = (props) => {
                                 <div id="table-home-print">
                                     <div className="colum-home-print">
                                         {datospedidos.map(run => {
-                                            console.log(datospedidos)
+                                            
                                             return (
                                             <div className="table-print-pedidos">
                                                 <div className="table-home-print-n-order">

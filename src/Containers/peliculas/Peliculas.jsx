@@ -33,7 +33,7 @@ const Peliculas = (props) => {
         };
         let res = await axios.get('https://proyectopeliculasgeekshubs.herokuapp.com/peliculas', config);
         setPeliculas(res.data)
-        console.log(res)
+        
 
     };
 
@@ -41,26 +41,26 @@ const Peliculas = (props) => {
         setTimeout(() => {
             recibirpeliculas();
             store.subscribe(a=> console.log(store.getState()));
-            console.log("hola")
+            
         }, 1000);
     }, []);
 
     useEffect(() => {
-        console.log(peliculas)
+        
 
     });
 
     
 
     const eligePelicula = (escogida) => {
-        console.log(escogida);
+        
     }
 
 
 
 
     const alquilarPelicula = async (pelicula) => {
-        console.log(props.credentials.user._id)
+        
 
 
         const body = {
@@ -76,7 +76,7 @@ const Peliculas = (props) => {
         
             
         }
-            console.log(body)
+            
             
         
         
@@ -88,7 +88,7 @@ const Peliculas = (props) => {
 
         let res = await axios.post("https://proyectopeliculasgeekshubs.herokuapp.com/pedidos",  body, config);
         
-        console.log("respuesta", res)
+        
         
     }
 

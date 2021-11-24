@@ -31,14 +31,14 @@ const Login = (props) => {
 
             let res = await axios.post("https://proyectopeliculasgeekshubs.herokuapp.com/usuario/signin", body);
             setmsgError(`inicio de sesión correcto ${res.data.user.nombre}....`);
-            console.log("respuesta",res)
+            
             
             // localStorage.setItem("datosLogin", JSON.stringify(res.data.user));
 
             let datos = res.data;
             
             props.dispatch({type:LOGIN,payload:datos});
-            console.log(datos)
+            
             
             setTimeout(() => {
                 history("/Peliculas");

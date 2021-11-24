@@ -21,7 +21,7 @@ const Profile = (props) => {
 
     const update = async () => {
         props.dispatch({ type: UPDATE_USER, payload: userData });
-        console.log("aqui llego")
+        
         
         let token = {
             headers: { Authorization: `Bearer ${props.credentials.token}` }
