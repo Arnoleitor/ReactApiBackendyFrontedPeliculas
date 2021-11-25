@@ -97,3 +97,14 @@ border-top: 1px solid;
     justify-content: center;
     background-color: brown;
     }
+
+    .borrar{
+    color: red;
+    cursor: pointer;
+    }
+
+    .borrar:hover{
+        transition: 0.4s;
+        background-color: rgba(141, 6, 6, 0.438);
+        font-size: 0.9em;
+    }

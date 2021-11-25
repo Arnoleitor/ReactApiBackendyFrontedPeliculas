@@ -8,11 +8,14 @@ import './Admin.css';
 const Admin = (props) => {
     const [datosusuario, setdatosusuario] = useState("");
     const [datospedidos, setdatospedidos] = useState("");
+    const [borrarusuario, setdatosborrarusuario] = useState("");
+
     useEffect(() => {
         
         takeusers();
         takepedidos();
     }, [])
+
     const takeusers = async () => {
         try {
             let res = await axios.get("https://proyectopeliculasgeekshubs.herokuapp.com/usuario");
@@ -35,7 +38,22 @@ const Admin = (props) => {
         } catch (error) {
             console.log(error);
         }
+
     };
+
+    const borrar = async (props) => {
+        console.log("aqui",props)
+        try {
+            let res = await axios.delete(`https://proyectopeliculasgeekshubs.herokuapp.com/usuario/${props.borrado}`,);
+            console.log(res)
+            setdatosborrarusuario();
+            
+        } catch (error) {
+            console.log(error);
+        }
+
+    };
+    
     if (props.data_user?.token !== '') {
         
         return (
@@ -43,13 +61,14 @@ const Admin = (props) => {
                 <div className="main-container-one">
                     <h1 className="admin-h1"></h1>
                     <div className="">
-                        <h2 className="text-center mt-2">Últimos usuarios registrados </h2>
+                        <h2 className="text-center mt-2">Usuarios Registrados </h2>
                         {datosusuario.length > 0 &&
                             <div>
                             <div className="users-registers-title">
                             <p className="colum-components-admin-print" >Nombre</p>
                             <p className="colum-components-admin-print" >Email</p>
-                            <p className="colum-components-admin-print" >Id</p>
+                            <p className="colum-components-admin-print" >Id Usuario</p>
+                            <p className="colum-components-admin-print" >Eliminar Usuarios</p>
                             </div>
                             <div id="table-home-print">
                                 <div className="colum-home-print">
@@ -79,6 +98,16 @@ const Admin = (props) => {
                                         )
                                     })}
                                 </div>
+                                <div className="colum-home-print">
+                                    {datosusuario.map(run => {
+                                        let borrado = run._id;
+                                        return (
+                                            <p onClick={() => borrar({borrado})} className="colum-components-admin-print-register" key={run._id}>
+                                                <span className="borrar">Eliminar Usuario</span>
+                                            </p>
+                                        )
+                                    })}
+                                </div>
                             </div>
                             </div>
                         }
@@ -91,7 +120,7 @@ const Admin = (props) => {
                                 <div className="titles-of-last-orders"><p className="colum-components-admin-print-pedidos-titles">Fecha pedido</p></div>
                                 <div className="titles-of-last-orders"><p className="colum-components-admin-print-pedidos-titles">Vendedor</p></div>
                                 <div className="titles-of-last-orders"><p className="colum-components-admin-print-pedidos-titles">Pelicula</p></div>
-                                <div className="titles-of-last-orders"><p className="colum-components-admin-print-pedidos-titles">ID Pelicula</p></div>
+                                <div className="titles-of-last-orders"><p className="colum-components-admin-print-pedidos-titles">ID Pelicula</p></div>                              
                             </div>
                             {datospedidos.length > 0 &&
                                 <div id="table-home-print">

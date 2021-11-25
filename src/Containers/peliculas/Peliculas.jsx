@@ -139,7 +139,7 @@ const Peliculas = (props) => {
                 
                 <div className="abrepeliculas" id="myDIV">
                 <div className="salida" id="X" onClick={() => cierreAlquiler()}>SALIR</div>
-                <div>🎬Has alquilado la siguiente pelicula🎬</div> 
+                <div>🎬Pelicula alquilada!🎬</div> 
                 <div>Título:  {peliculasinfo}</div>
                 <div>Director:  {peliculasinfodirector}</div>
                 <div>Género:  {peliculasinfogenero}</div>
