@@ -60,6 +60,7 @@ img.profile-image-films {
 }
 .last-order-titles {
     display: flex;
+    font-family: fantasy;
 }
 .colum-components-admin-print {
     border-top: 1px solid;
@@ -74,7 +75,9 @@ img.profile-image-films {
 .users-registers-title {
     display: flex;
     justify-content: center;
+    font-family: fantasy;
 }
+
 p.colum-components-admin-print-register{
 border-top: 1px solid;
     border-bottom: 1px solid;

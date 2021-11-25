@@ -77,7 +77,7 @@ const Peliculas = (props) => {
         setpeliculasinfoduracion(pelicula.duracion);
         setpeliculasinfogenero(pelicula.genero);
         setpeliculasinfolanzamiento(pelicula.lanzamiento);
-        
+        // setpeliculas(peliculas)
         const body = {
 
             titulo: pelicula.titulo,
@@ -138,13 +138,14 @@ const Peliculas = (props) => {
                 </div>
                 
                 <div className="abrepeliculas" id="myDIV">
-                <div className="salida" id="X" onClick={() => cierreAlquiler()}>X</div>
+                <div className="salida" id="X" onClick={() => cierreAlquiler()}>SALIR</div>
                 <div>🎬Has alquilado la siguiente pelicula🎬</div> 
                 <div>Título:  {peliculasinfo}</div>
                 <div>Director:  {peliculasinfodirector}</div>
                 <div>Género:  {peliculasinfogenero}</div>
                 <div>Duración:  {peliculasinfoduracion}</div>
                 <div>Lanzamiento:  {peliculasinfolanzamiento}</div>
+                {/* <div>Lanzamiento:  {peliculas.titulo}</div> */}
                 
                 </div>
                 
