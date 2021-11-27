@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import { LOGOUT, UPDATE_USER } from '../../redux/types';
 import './Admin.css';
-// import profile from '../../images/profile.png';
+
 const Admin = (props) => {
     const [datosusuario, setdatosusuario] = useState("");
     const [datospedidos, setdatospedidos] = useState("");

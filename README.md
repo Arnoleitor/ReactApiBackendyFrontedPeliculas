@@ -64,12 +64,19 @@ Cerrar sesión 🚪
 
 <h2>Pantalla Admin:</h2>
 
-Al hacer un login como Administrador se despliega una nueva opción en el navegador de menus el cual es administrador, en el cual, se pueden ver sus pedidos, borrar y añadir películas.
+Al hacer un login como Administrador se despliega una nueva opción en el navegador de menus el cual es administrador, en el cual, se pueden ver sus pedidos y borrar usuarios .
 
 <p aling="center">
   <img src="./src/Images/ADMIN.png" width="500" title="hover text">
 </p>
 <br>
+<p aling="center">
+  <img src="./src/Images/adminUsuarios.png" width="500" title="hover text">
+</p>
+<br>
+<p aling="center">
+  <img src="./src/Images/adminPedidos.png" width="500" title="hover text">
+</p>
 <h1>Agradecimientos:</h1>
 
 😁A todos los compañeros que me ayudaron a resolver dudas,también a David Ochando y a Jose Marín.😁
