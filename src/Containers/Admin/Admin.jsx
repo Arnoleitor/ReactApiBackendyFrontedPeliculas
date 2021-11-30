@@ -41,7 +41,7 @@ const Admin = (props) => {
     };
 
     const borrar = async (deletes) => {
-        console.log("aqui",deletes)
+       
         try {
             let res = await axios.delete(`https://proyectopeliculasgeekshubs.herokuapp.com/usuario/${deletes.borrado}`,);
             console.log(res)
@@ -54,10 +54,10 @@ const Admin = (props) => {
     };
 
     const borrarpedido = async (run) => {
-        console.log("aqui",run)
+       
         
         try {
-            console.log("token bro",props.credentials.token)
+            
             let res = await axios.delete(`https://proyectopeliculasgeekshubs.herokuapp.com/pedidos/${run.run._id}`,{
             headers:{
                 'Authorization': `Bearer ${props.credentials.token}`
