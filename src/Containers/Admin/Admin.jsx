@@ -7,6 +7,7 @@ const Admin = (props) => {
     const [datosusuario, setdatosusuario] = useState("");
     const [datospedidos, setdatospedidos] = useState("");
     const [borrarusuario, setdatosborrarusuario] = useState("");
+    const [borrarpedidos, setdatosborrarpedidos] = useState("");
 
     useEffect(() => {
         
@@ -39,12 +40,31 @@ const Admin = (props) => {
 
     };
 
-    const borrar = async (props) => {
-        console.log("aqui",props)
+    const borrar = async (deletes) => {
+        console.log("aqui",deletes)
         try {
-            let res = await axios.delete(`https://proyectopeliculasgeekshubs.herokuapp.com/usuario/${props.borrado}`,);
+            let res = await axios.delete(`https://proyectopeliculasgeekshubs.herokuapp.com/usuario/${deletes.borrado}`,);
             console.log(res)
             setdatosborrarusuario();
+            
+        } catch (error) {
+            console.log(error);
+        }
+
+    };
+
+    const borrarpedido = async (run) => {
+        console.log("aqui",run)
+        
+        try {
+            console.log("token bro",props.credentials.token)
+            let res = await axios.delete(`https://proyectopeliculasgeekshubs.herokuapp.com/pedidos/${run.run._id}`,{
+            headers:{
+                'Authorization': `Bearer ${props.credentials.token}`
+                
+            }
+        });
+            setdatosborrarpedidos();
             
         } catch (error) {
             console.log(error);
@@ -118,39 +138,46 @@ const Admin = (props) => {
                                 <div className="titles-of-last-orders"><p className="colum-components-admin-print-pedidos-titles">Fecha pedido</p></div>
                                 <div className="titles-of-last-orders"><p className="colum-components-admin-print-pedidos-titles">Vendedor</p></div>
                                 <div className="titles-of-last-orders"><p className="colum-components-admin-print-pedidos-titles">Pelicula</p></div>
-                                <div className="titles-of-last-orders"><p className="colum-components-admin-print-pedidos-titles">ID Pelicula</p></div>                              
+                                <div className="titles-of-last-orders"><p className="colum-components-admin-print-pedidos-titles">ID Pelicula</p></div>
+                                <div className="titles-of-last-orders"><p className="colum-components-admin-print-pedidos-titles">Eliminar Pedido</p></div>                                                                                      
                             </div>
                             {datospedidos.length > 0 &&
                                 <div id="table-home-print">
                                     <div className="colum-home-print">
                                         {datospedidos.map(run => {
-                                            
+                                            let borrar = run._id;
                                             return (
                                             <div className="table-print-pedidos">
-                                                <div className="table-home-print-n-order">
+                                                <div className="ColumnasPrincipales">
                                                     <p className="colum-components-admin-print-pedidos" key={run._id}>
                                                    {run.usuarioid}
                                                     </p>
                                                 </div>
-                                                <div>
+                                                <div className="ColumnasPrincipales">
                                                     <p className="colum-components-admin-print-pedidos" key={run._id}>
                                                     {run.createdAt}
                                                     </p>
                                                 </div>
-                                                <div>
+                                                <div className="ColumnasPrincipales">
                                                     <p className="colum-components-admin-print-pedidos" key={run._id}>
                                                    {run.dependiente}
                                                     </p>
                                                 </div>
-                                                <div>
+                                                <div className="ColumnasPrincipales">
                                                     <p className="colum-components-admin-print-pedidos" key={run._id}>
                                                     {run.titulo}
                                                     </p>
                                                 </div>
-                                                <div>
+                                                <div className="ColumnasPrincipales">
                                                     <p className="colum-components-admin-print-pedidos" key={run._id}>
                                                     {run.numero}
                                                     </p>
+                                                </div>
+                                                <div className="ColumnasPrincipales">
+                                                    <p onClick={() => borrarpedido({run})}  key={run._id}>
+                                                <span className="borrar">Eliminar Pedido</span>
+                                                </p>
+                                                    
                                                 </div>
                                             </div>
                                             )

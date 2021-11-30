@@ -64,7 +64,7 @@ Cerrar sesión 🚪
 
 <h2>Pantalla Admin:</h2>
 
-Al hacer un login como Administrador se despliega una nueva opción en el navegador de menus el cual es administrador, en el cual, se pueden ver sus pedidos y borrar usuarios .
+Al hacer un login como Administrador se despliega una nueva opción en el navegador de menus el cual es administrador, en el cual, se pueden ver sus pedidos ,borrarlos, y borrar usuarios .
 
 <p aling="center">
   <img src="./src/Images/ADMIN.png" width="500" title="hover text">
